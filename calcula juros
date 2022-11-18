@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+  <body>
+    <script src="scripts.js"></script>
+    
+  </body>
+</html>
+
+
+var valorCompra=3000;
+var taxa=2.39; // em porcentagem (%)
+var parcelas=10;
+imprima("Parcelamento em "+ parcelas + "vezes:")
+imprima("Juros:"+calculaJuros(valorCompra, parcelas, taxa));
+imprima("valor total:" + calculaParcela(valorCompra,parcelas,taxa));
+imprima("Parcelas:"+ calculaParcela(valorCompra, parcelas,taxa));
+
+imprima("");
+imprima(descobreJuros(3000,850,10));
+imprima(descobreJuros(3000,371.7,10));
+imprima(calculadesconto(4999.99,12.5).toFixed(2));
+
+function descobreJuros(valorCompra, valorParcela, parcelas){
+var valorTotal=valorParcela * parcelas;
+var juros= valorTotal - valorCompra;
+var taxa = juros / (valorCompra * parcelas);
+return (taxa*100)+ "%" ;
+}
+function calculadesconto(valor,desconto){
+    return (valor*desconto/100);
+}
+
+function imprima(texto) {
+     document.write(texto+ "<br>");}
+
+function calculaJuros(capital,intervalo,taxa){
+    return (capital * (taxa/100) * intervalo);}
+
+     function calculaParcela(capital, intervalo, taxa){
+         imprima(calculaJuros(capital, intervalo,taxa)+capital);}
+
+         function descobreJuros(valorCompra, calorParcela, parcelas){
+         var valorTotal = calorParcela * parcelas;
+         var juros= valorTotal - valorCompra;
+         var taxa= juros / (valorCompra * parcelas);}
+       
+     
+     
+
+
